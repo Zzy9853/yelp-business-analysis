@@ -18,6 +18,8 @@
 | 2020 疫情冲击 | 控制平台大盘（CAGR 7.1% 外推）后真实冲击 −43%；居家服务恢复 85% vs 美容美发 61% |
 | 高潜商家识别 | 2020 状态预测 2021 爆发型增长（时间切分防泄漏），AUC 0.81（+属性 0.82） |
 | 对照验证 | 预测 top20% 商家 2021 实际增速 1.59 vs 其余 0.07（22.7 倍差异） |
+| 改进收益验证 | 等待抱怨减少的商家星级确实改善（Δ等待×Δ星级 −0.13） |
+| 关闭预警 | 评论量增速骤降是最强死亡信号（AUC 0.70） |
 
 ## 仓库结构
 
@@ -31,7 +33,10 @@ yelp-analysis/
 │   ├── 02_market_explore.py     # 市场画像与指标体系
 │   ├── 03_attribution.py        # 归因：评论话题拆解 / 驱动因子 / 疫情异动
 │   ├── 04_strategy.py           # 策略：改进优先级 / 高潜识别模型 / 对照验证
-│   └── 05_generate_charts.py    # 图表生成
+│   ├── 05_generate_charts.py    # 图表生成
+│   ├── 06_improvement_validation.py  # 改进收益验证（等待抱怨→星级，横截面+时间）
+│   ├── 07_risk_cluster_topics.py     # 关闭预警 / 轨迹聚类 / 话题时间演化
+│   └── 08_depth_analysis.py          # 深度扩展（存活率/权威加权/竞争/归因/健康度）
 ├── charts/                      # 8 张分析图表
 └── docs/
     └── data_dictionary.md       # 数据字典与口径说明
@@ -50,6 +55,9 @@ yelp-analysis/
    python scripts/03_attribution.py       # 归因分析
    python scripts/04_strategy.py          # 策略与验证
    python scripts/05_generate_charts.py   # 图表 → charts/
+   python scripts/06_improvement_validation.py  # 改进收益验证
+   python scripts/07_risk_cluster_topics.py     # 关闭预警/轨迹聚类/话题演化
+   python scripts/08_depth_analysis.py          # 深度扩展分析
    ```
 
 ## 技术栈
