@@ -1,0 +1,22 @@
+# 数据与数据库（从脚本重建，不入库）
+*.db
+*.json
+data/
+
+# 面试/学习文档（本地保留，不入公开仓库）
+docs/interview/
+教学文档*.md
+*面试Q&A*.md
+*终稿*.md
+决策日志.md
+Y0_叙事骨架.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 系统
+.DS_Store
+Thumbs.db
